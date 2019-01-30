@@ -1,0 +1,8 @@
+name: ${name}
+main: ${package}.${name}
+version: ${version}
+authors: [Ghost_chu]
+description: QSRR's WorldGuard Addon
+depend: [QuickShop,WorldGuard]
+
+api-version: 1.13
