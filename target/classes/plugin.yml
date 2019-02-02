@@ -1,6 +1,6 @@
 name: QSRRWorldGuardAddon
-main: com.mcsunnyside.qstowny.QSRRWorldGuardAddon
-version: 0.0.1-SNAPSHOT
+main: com.mcsunnyside.qsworldguard.QSRRWorldGuardAddon
+version: 0.0.2-SNAPSHOT
 authors: [Ghost_chu]
 description: QSRR's WorldGuard Addon
 depend: [QuickShop,WorldGuard]

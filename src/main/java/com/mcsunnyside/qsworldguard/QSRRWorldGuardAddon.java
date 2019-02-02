@@ -11,8 +11,10 @@ import org.maxgamer.quickshop.Shop.ShopPreCreateEvent;
 
 import java.util.Map;
 
+import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldedit.world.World;
 import com.sk89q.worldguard.WorldGuard;
+import com.sk89q.worldguard.bukkit.BukkitUtil;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import com.sk89q.worldguard.protection.flags.Flags;
 import com.sk89q.worldguard.protection.flags.StateFlag;
@@ -61,7 +63,8 @@ public class QSRRWorldGuardAddon extends JavaPlugin implements Listener {
 	}
 	@EventHandler
 	public void shopPreCreateEvent (ShopPreCreateEvent e) {
-		 Map<String, ProtectedRegion> regions = WorldGuard.getInstance().getPlatform().getRegionContainer().get((World) e.getLocation().getWorld()).getRegions();
+		
+		 Map<String, ProtectedRegion> regions = WorldGuard.getInstance().getPlatform().getRegionContainer().get(BukkitAdapter.adapt(e.getLocation().getWorld())).getRegions();
 		 for (ProtectedRegion region : regions.values()) {
 			 if(region.contains(e.getLocation().getBlockX(), e.getLocation().getBlockY(), e.getLocation().getBlockZ())) {
 				 if(region.getFlag(flag)!=State.ALLOW) {
